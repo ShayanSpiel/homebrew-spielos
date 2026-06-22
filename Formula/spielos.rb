@@ -1,0 +1,20 @@
+class Spielos < Formula
+  desc "Markdown-native marketing OS for AI IDEs and agents"
+  homepage "https://github.com/ShayanSpiel/SpielOS"
+  url "https://github.com/ShayanSpiel/SpielOS/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "REPLACE_AFTER_FIRST_RELEASE"
+  version "0.1.0"
+  license "MIT"
+
+  depends_on "node"
+  depends_on "python@3"
+
+  def install
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"bin/spiel" => "spiel"
+  end
+
+  test do
+    assert_match "SpielOS", shell_output("#{bin}/spiel help")
+  end
+end
