@@ -1,9 +1,9 @@
 class Spielos < Formula
   desc "Markdown-native marketing OS for AI IDEs and agents"
   homepage "https://github.com/ShayanSpiel/SpielOS"
-  url "https://github.com/ShayanSpiel/SpielOS/releases/download/v0.1.2/SpielOS-0.1.2.tar.gz"
-  sha256 "0e551efa714f83373500dd9e9267dd7d46ff02fbbd47688790456917cb2d90e3"
-  version "0.1.2"
+  url "https://github.com/ShayanSpiel/SpielOS/releases/download/v0.1.3/SpielOS-0.1.3.tar.gz"
+  sha256 "9091af82b3a2416fbaac7955676424563998e6b68ed150a656de26b2a62986d9"
+  version "0.1.3"
   license "MIT"
 
   depends_on "node"
