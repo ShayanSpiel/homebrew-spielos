@@ -1,7 +1,7 @@
 # ShayanSpiel Homebrew Tap
 
 ```bash
-brew tap ShayanSpiel/spiel
+brew tap ShayanSpiel/spielos
 brew install spielos
 ```
 
