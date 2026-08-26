@@ -1,20 +1,23 @@
+# Homebrew formula for SpielOS (spielos)
 class Spielos < Formula
-  desc "Markdown-native marketing OS for AI IDEs and agents"
-  homepage "https://github.com/ShayanSpiel/SpielOS"
-  url "https://github.com/ShayanSpiel/SpielOS/releases/download/v0.1.3/SpielOS-0.1.3.tar.gz"
-  sha256 "9091af82b3a2416fbaac7955676424563998e6b68ed150a656de26b2a62986d9"
-  version "0.1.3"
+  include Language::Python::Virtualenv
+  desc "AI company operating system with durable goals, departments, and approvals"
+  homepage "https://spielos.xyz"
+  url "https://github.com/ShayanSpiel/SpielOS/archive/refs/tags/v6.3.0.tar.gz"
+  sha256 "8aa44be3c4cfde78e2187d94b8c1f93d59c13a2b66ac0da9ad9d385b216d0e30"
   license "MIT"
-
-  depends_on "node"
-  depends_on "python@3"
-
+  head "https://github.com/ShayanSpiel/SpielOS.git", branch: "main"
+  depends_on "python@3.12"
   def install
-    libexec.install Dir["*"]
-    bin.install_symlink libexec/"bin/spiel" => "spiel"
+    venv = virtualenv_create(libexec, "python@3.12")
+    venv.pip_install buildpath
+    (bin/"spielos").write <<~EOS
+      #!/bin/bash
+      exec "#{libexec}/bin/python3" -m company "$@"
+    EOS
+    chmod 0755, bin/"spielos"
   end
-
   test do
-    assert_match "SpielOS", shell_output("#{bin}/spiel help")
+    assert_match "spielos", shell_output("#{bin}/spielos --version")
   end
 end
