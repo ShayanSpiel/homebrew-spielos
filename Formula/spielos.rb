@@ -10,8 +10,8 @@ class Spielos < Formula
   desc "AI company operating system with durable Goals, Departments, and approvals"
   homepage "https://spielos.xyz"
   # Content-addressed source sdist published by PyPI.
-  url "https://files.pythonhosted.org/packages/f5/f5/e0e25be3efe4289b0691496dc3325b959abdbede3f857aaa07fd89e66602/spielos-10.0.2.tar.gz"
-  sha256 "f36c655f560985b421af6881a5de87576ddb39486406376638b925530bbd93ba"
+  url "https://files.pythonhosted.org/packages/36/64/0fb5d28e2793105fc76e2d75ef1680a0a0d04f8e9df9ee4811cf172f4558/spielos-10.2.0.tar.gz"
+  sha256 "c6291cd85d72b4105826c945831f08e128054b70481e5a5ad29796fd9ae89ee8"
   license "MIT"
   head "https://github.com/ShayanSpiel/SpielOS.git", branch: "main"
 
